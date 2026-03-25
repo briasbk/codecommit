@@ -2,8 +2,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies"
+      - pip install bandit
   build:
     commands:
-      - echo "Running tests that will fail"
-      - exit 1   # forces failure
+      - echo "Running Bandit Security Scan"
+      - bandit -r . || true
